@@ -1,10 +1,11 @@
+import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { PostCard, PostWidget, Categories } from '../components'
 import { getPosts } from '../services'
 import FeaturedPosts from '../section/FeaturedPosts'
 
-export default function Home({ posts }) {
+const Home = ({ posts }: { posts: any }) => {
   //console.log(posts)
   return (
     <div className="">
@@ -31,6 +32,8 @@ export default function Home({ posts }) {
     </div>
   )
 }
+
+export default Home
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || []
