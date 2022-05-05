@@ -20,12 +20,12 @@ const Home = ({ posts }: { posts: any }) => {
             <h1 className="text-2xl font-bold italic text-[#222629]">Latest</h1>
             <div className="h-[5px] w-[30%] skew-x-[-35deg] border-2 border-[#547D21] bg-[#547D21]"></div>
           </div>
-          {posts.map((post, index) => (
+          {posts.map((post: any, index: any) => (
             <PostCard post={post.node} key={index} />
           ))}
         </div>
         <div className="md:w-[50%]">
-          <PostWidget />
+          <PostWidget slug="" categories="" />
           <Categories />
         </div>
       </div>
