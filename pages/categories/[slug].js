@@ -2,9 +2,15 @@ import React from 'react'
 import { PostCard, PostWidget, Categories } from '../../components'
 import FeaturedPosts from '../../section/FeaturedPosts'
 import { getCategoriesPosts, getCategories } from '../../services'
+import { useRouter } from 'next/router'
 
 const CategoryPosts = ({ posts }) => {
   // console.log(posts)
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return <></>
+  }
   return (
     <div>
       <FeaturedPosts />
